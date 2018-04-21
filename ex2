@@ -1,0 +1,159 @@
+
+public class Drunk {
+	public static void main(String[] args) {
+		int distance = MyConsole.readInt("Enter Distance: ");
+		while(distance<=0){
+			System.out.println("Invalid Input!");
+			distance = MyConsole.readInt("Enter Distance: ");
+		}
+		int[] Drunk = new int[distance+1];
+		int runs = MyConsole.readInt("Enter number of Runs: ");
+		int steps = MyConsole.readInt("Enter number of Steps: ");
+		int point = 0;
+		int pointX = 0;
+		int pointY = 0;
+		int times2 = 0;
+		double devider = runs/100;
+		int times = 0;
+		
+		while(!(distance>=0 & runs>=0 & steps>=0))
+		{
+			System.out.println("Invalid Input!");
+			distance = MyConsole.readInt("Enter Distance: ");
+			runs = MyConsole.readInt("Enter number of Runs: ");
+			steps = MyConsole.readInt("Enter number of Steps: ");
+		}
+		System.out.println("Drunk on the line: ");
+		for(int i = 0;i<=Drunk.length-1;i++)
+		{
+			System.out.print("Distance of " + i + " : ");
+			for(int j = 0; j<=runs;j++)
+			{
+				for(int x = 0; x<=steps;x++)
+				{
+					int random = (int)(Math.random()*2);
+					if(random == 1)
+					{
+						point++;
+					}
+					else
+					{
+						point--;
+					}
+				}
+				if(point == i)
+				{
+					times++;
+				}else{
+					point = 0;
+				}
+			}
+			point = 0;
+			Drunk[i]=times;
+			double calc = times/devider;
+			System.out.print(Drunk[i] + "/ " + runs);
+			System.out.print(" , " + calc + " %");
+			times = 0;
+			System.out.println();
+			if(i==Drunk.length-1)
+			{
+			System.out.print("Distance of more than " + i + " : ");
+			for(int j = 0; j<=runs;j++)
+			{
+				for(int x = 0; x<=steps;x++)
+				{
+					int random = (int)(Math.random()*2);
+					if(random == 1)
+					{
+						point++;
+					}
+					else
+					{
+						point--;
+					}
+				}
+				if(point > i)
+				{
+					times++;
+				}else{
+					point = 0;
+				}
+				point=0;
+			}
+			Drunk[i]=times;
+			calc = times/devider;
+			System.out.print(Drunk[i] + "/ " + runs);
+			System.out.print(" , " + calc + " %");
+			times = 0;
+			System.out.println();
+			}
+		}
+		//Part Two of this Drunk man!!
+		//Need to change the variables to suite the other part...
+		for(int i = 0;i<=Drunk.length-1;i++)
+		{
+			System.out.print("Distance of " + i + " : ");
+			for(int j = 0; j<=runs;j++)
+			{
+				for(int x = 0; x<=steps;x++)
+				{
+					int random = (int)(Math.random()*2);
+					if(random == 1)
+					{
+						point++;
+					}
+					else
+					{
+						point--;
+					}
+				}
+				if(point == i)
+				{
+					times++;
+				}else{
+					point = 0;
+				}
+			}
+			point = 0;
+			Drunk[i]=times;
+			double calc = times/devider;
+			System.out.print(Drunk[i] + "/ " + runs);
+			System.out.print(" , " + calc + " %");
+			times = 0;
+			System.out.println();
+			if(i==Drunk.length-1)
+			{
+			System.out.print("Distance of more than " + i + " : ");
+			for(int j = 0; j<=runs;j++)
+			{
+				for(int x = 0; x<=steps;x++)
+				{
+					int random = (int)(Math.random()*2);
+					if(random == 1)
+					{
+						point++;
+					}
+					else
+					{
+						point--;
+					}
+				}
+				if(point > i)
+				{
+					times++;
+				}else{
+					point = 0;
+				}
+				point=0;
+			}
+			Drunk[i]=times;
+			calc = times/devider;
+			System.out.print(Drunk[i] + "/ " + runs);
+			System.out.print(" , " + calc + " %");
+			times = 0;
+			System.out.println();
+			}
+		}
+		
+	}
+}
